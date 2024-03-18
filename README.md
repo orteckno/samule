@@ -739,7 +739,7 @@ namespace ConsoleApp2
 HEADER 
 [ ENTER NAME ]   [ TEXTBOX  ]
 
- FURTHER
+ FOOTER
 -------------------------------------------------------------------------------
 
 
