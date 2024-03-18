@@ -85,97 +85,85 @@ MessageBox.Show(&quot;Not Eligibility To Vote !!&quot;);
 
 ###########################################2. Exercise using validation class PROGRAM2################
 
-<form id="form1" runat="server">
- <div>
- <table style="width: 66%;">
+-------------------------------------------------------------------------------------------------------
+[Label]  choose your candidate
+
+Candidate  [ Drop down list]  Required Fiel Validator      [ choose your candidate]
+House   [radio button list]  Required Field Validator      [ choose house ]
+Class [ textbox ] range validator                           [ choose class ]
+email [ textbox] regular expression validator               [ eneter email id ]
+
+[  SUBMIT ]
+
+validation summary
+--------------------------------------------------------------------------------------------
+Candidate -> click on [ drop down list] -> items (collection)      control to validate - dropdown list
+house-> same as  above                                             control to validate - radio button
+class-> click on(range validator)-> control to validate( choose -> texbox1) -> maximum (6) ->minimum (1)
+email -> control to validate ( choose -> textbox2) -> Validation Expression (choose - internet email)
+
+
+
+
+
+
+
+
+
+
+
+
+
+<configuration>
+  <system.web>
+    <compilation debug="true" targetFramework="4.6.1"/>
+    <httpRuntime targetFramework="4.6.1"/>
+    <pages>
+      <namespaces>
+        <add namespace="System.Web.Optimization"/>
+      </namespaces>
+      <controls>
+        <add assembly="Microsoft.AspNet.Web.Optimization.WebForms" namespace="Microsoft.AspNet.Web.Optimization.WebForms" tagPrefix="webopt"/>
+      </controls>
+    </pages>
+  </system.web>
+
+           
+	<appSettings>
+		<add key="ValidationSettings:UnobtrusiveValidateionMode" value="None"/>
+	</appSettings>
+
  
- <tr>
- <td class="style1" colspan="3" align="center">
- <asp:Label ID="lblmsg" 
- Text="President Election Form : Choose your president" 
- runat="server" />
- </td>
- </tr>
- <tr>
- <td class="style3">
- Candidate:
- </td>
- <td class="style2">
- <asp:DropDownList ID="candidate" runat="server" style="width:239px">
- <asp:ListItem>Please Choose a Candidate</asp:ListItem>
- <asp:ListItem>Deekshana</asp:ListItem>
- <asp:ListItem>Elakiya</asp:ListItem>
- <asp:ListItem>Abirami</asp:ListItem>
- <asp:ListItem>Buddy</asp:ListItem>
- </asp:DropDownList>
- </td>
- <td> 
- <asp:RequiredFieldValidator ID="rfvcandidate" runat="server" 
- ControlToValidate="candidate" InitialValue="Please Choose a Candidate" 
-ErrorMessage="Choose Your Candidate">
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1"> 
+      <dependentAssembly>
+        <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f"/>
+        <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed"/>
+        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930"/>
+      </dependentAssembly>      
+    </assemblyBinding>
+  </runtime>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs"
+        type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+        warningLevel="4" compilerOptions="/langversion:default /nowarn:1659;1699;1701"/>
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb"
+        type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+        warningLevel="4" compilerOptions="/langversion:default /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+"/>
+    </compilers>
+  </system.codedom>
+</configuration>
  
- </asp:RequiredFieldValidator>
- </td>
- </tr>
- <tr>
- <td class="style3">
- House:
- </td>
- <td class="style2">
- <asp:RadioButtonList ID="rblhouse" runat="server" RepeatLayout="Flow">
- <asp:ListItem>Red</asp:ListItem>
- <asp:ListItem>Blue</asp:ListItem>
- <asp:ListItem>Yellow</asp:ListItem>
- <asp:ListItem>Green</asp:ListItem>
- </asp:RadioButtonList>
- </td>
- <td>
- <asp:RequiredFieldValidator ID="rfvhouse" runat="server" 
- ControlToValidate="rblhouse" ErrorMessage="Enter your house name" >
- </asp:RequiredFieldValidator>
- <br />
- </td>
- </tr>
- <tr>
- <td class="style3">
- Class:
- </td>
- <td class="style2">
- <asp:TextBox ID="txtclass" runat="server"></asp:TextBox>
- </td>
- <td>
- <asp:RangeValidator ID="rvclass" 
- runat="server" ControlToValidate="txtclass" 
- ErrorMessage="Enter your current year in numbers" MaximumValue="3" 
- MinimumValue="1" Type="Integer">
- </asp:RangeValidator>
- </td>
- </tr>
- <tr>
- <td class="style3">
- Email:
- </td>
- <td class="style2">
- <asp:TextBox ID="txtemail" runat="server" style="width:250px">
- </asp:TextBox>
- </td>
- <td>
- <asp:RegularExpressionValidator ID="remail" runat="server" 
- ControlToValidate="txtemail" ErrorMessage="Enter your email" 
- ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
- </asp:RegularExpressionValidator>
- </td>
- </tr>
- <tr>
- <td class="style3" align="center" colspan="3">
- <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Submit" />
- </td>
- </tr>
- </table>
- <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
- DisplayMode ="BulletList" ShowSummary ="true" HeaderText="Errors:" />
- </div>
- </form>
+
+ 
 protected void Button1_Click(object sender, EventArgs e)
  {
  if (Page.IsValid)
