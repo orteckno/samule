@@ -71,7 +71,7 @@ private void button1_Click(object sender, EventArgs e)
 {
 int a;
 a = Convert.ToInt32(vote1.Text);
-if (a&gt;=18)
+if (a>=18)
 {
 MessageBox.Show(&quot;Eligibility To Vote !!&quot;);
 }
@@ -101,17 +101,6 @@ Candidate -> click on [ drop down list] -> items (collection)      control to va
 house-> same as  above                                             control to validate - radio button
 class-> click on(range validator)-> control to validate( choose -> texbox1) -> maximum (6) ->minimum (1)
 email -> control to validate ( choose -> textbox2) -> Validation Expression (choose - internet email)
-
-
-
-
-
-
-
-
-
-
-
 
 
 <configuration>
@@ -198,16 +187,9 @@ Output:
     O ENTER YOUR EMAIL
     -----------------------------------------------------------------------------------------
 
-    USERNAM     - REQUIERD FIEL VALIDATOR
-    PASSWORD    -REQUIRED FIELD VALIDATION
-    CONFROM PASSWORD   -COMPARE VALIDATION
-    EMAIL      - REGULAR EXPRESSION
-    PHONE NO   -CUSTOM VALIDATION
-    AGE   - RANGE VALIDATION
-
-    [SUBMIT]
-
-    ################################################################PROGRAM 33. Exercise using iterative structures###########################################
+   
+  
+  ################################################################PROGRAM 33. Exercise using iterative structures###########################################
 
  
 
