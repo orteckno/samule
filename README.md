@@ -103,6 +103,8 @@ class-> click on(range validator)-> control to validate( choose -> texbox1) -> m
 email -> control to validate ( choose -> textbox2) -> Validation Expression (choose - internet email)
 click on ( validation summary) -> Header text (Error)
 
+if it will show j  error then    click on (web.config) copy paste the line
+
 <configuration>
   <system.web>
     <compilation debug="true" targetFramework="4.6.1"/>
@@ -117,7 +119,7 @@ click on ( validation summary) -> Header text (Error)
     </pages>
   </system.web>
 
-           
+         111111  
 	<appSettings>
 		<add key="ValidationSettings:UnobtrusiveValidateionMode" value="None"/>
 	</appSettings>
