@@ -742,62 +742,65 @@ HEADER
  FOOTER
 -------------------------------------------------------------------------------
 
+new -> project -> left click on (Web) -> ASP .Net Web application framework -> empty
+right click on (webformapplication)-> add -> new item -> on left click (web from)-> web forms master page
+in site master 1 -> copy paste the code
+right click webapplication-> add -> new item -> web forms with master page-> ok
+go to design page -> add [ textbox]
 
 Site1.Master
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" 
-Inherits="WebApplication1.Site1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication10.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
 <head runat="server">
- <title></title>
- <asp:ContentPlaceHolder ID="head" runat="server">
- </asp:ContentPlaceHolder>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
- <form id="form1" runat="server">
- <div>
- Header
- </div>
- <div>
- <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
- </asp:ContentPlaceHolder>
- <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
- </asp:ContentPlaceHolder>
- <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
- </asp:ContentPlaceHolder>
- </div>
- <div>
- <p>
- Footer
- </p>
- </div>
- </form>
+    <form id="form1" runat="server">
+        <div>
+            Header											
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">				
+            </asp:ContentPlaceHolder>									
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">				
+            </asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+		 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <p>
+                footer
+            </p>
+        </div>
+    </form>
 </body>
 </html>
 
 
+
+
 webforms1.apsx
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" 
-AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" 
-Inherits="WebApplication1.WebForm1" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication10.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" 
-runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" 
-runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" 
-runat="server">
- <asp:Label ID="Label1" runat="server" Text="Enter name"></asp:Label>
-<asp:TextBox ID="TextBox1" runat="server" Height="16px" 
- style="margin-left: 9px" Width="208px"></asp:TextBox>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+ <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>                                   	[[  COPY PASTE ]]
 </asp:Content>
 
 
  ##################################### PRGRAM 9 9. Exercise using data bound controls ########################################3
+
+
 
 
  WebForms1.apx
