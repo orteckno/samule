@@ -101,7 +101,7 @@ Candidate -> click on [ drop down list] -> items (collection)      control to va
 house-> same as  above                                             control to validate - radio button
 class-> click on(range validator)-> control to validate( choose -> texbox1) -> maximum (6) ->minimum (1)
 email -> control to validate ( choose -> textbox2) -> Validation Expression (choose - internet email)
-
+click on ( validation summary) -> Header text (Error)
 
 <configuration>
   <system.web>
